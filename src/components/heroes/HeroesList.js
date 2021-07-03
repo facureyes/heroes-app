@@ -6,7 +6,7 @@ const HeroesList = ({ publisher }) => {
 
   const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
   return (
-    <div className="row">
+    <div className="row card-columns animate__animated animate__fadeIn">
       {
         heroes.map( heroe => (
           <div key={heroe.id} className="col-lg-3 col-md-4 col-sm-6">
