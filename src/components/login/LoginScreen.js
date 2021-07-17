@@ -20,7 +20,7 @@ const LoginScreen = ({ history }) => {
         logged: true,
       }
     })
-    history.replace('/') ;
+    history.replace(localStorage.getItem('lastPath') || '/') ;
   }
   return (
     <div className="container mt-5">
