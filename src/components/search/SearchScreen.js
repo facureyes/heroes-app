@@ -24,7 +24,7 @@ const SearchScreen = ({history}) => {
   
   return (
     <div>
-      <h1>Search Scree</h1>
+      <h1>Search Screen</h1>
       <hr />
 
       <div className="row">
