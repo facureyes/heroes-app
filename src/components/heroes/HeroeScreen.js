@@ -1,11 +1,8 @@
 import React, { useMemo } from 'react'
 import { useParams, Redirect } from 'react-router-dom'
 import { getHeroesById } from '../../selectors/getHeroeById';
-
+import { getHeroeImageById } from '../../helpers/heroesImage';
 // import batman from '../../assets/heroes/dc-batman.jpg' //estatico
-
-const heroImages = require.context('../../assets/heroes', true);
-
 
 const HeroeScreen = ({history}) => {
   
@@ -35,7 +32,7 @@ const HeroeScreen = ({history}) => {
         <img 
           // src={`../assets/heroes/${heroeId}.jpg`} //desde public/assets
           // src={ batman } //usando import
-          src={ heroImages(`./${ heroeId }.jpg`).default }
+          src={ getHeroeImageById(heroeId) }
           alt={ superhero }
           className="img-thumbnail animate__animated animate__fadeInLeft"
         />
