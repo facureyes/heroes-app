@@ -2,6 +2,11 @@ import React, { useMemo } from 'react'
 import { useParams, Redirect } from 'react-router-dom'
 import { getHeroesById } from '../../selectors/getHeroeById';
 
+// import batman from '../../assets/heroes/dc-batman.jpg' //estatico
+
+const heroImages = require.context('../../assets/heroes', true);
+
+
 const HeroeScreen = ({history}) => {
   
   const { heroeId } = useParams();
@@ -28,7 +33,9 @@ const HeroeScreen = ({history}) => {
     <div className="row mt-5 animate__animated animate__fadeIn">
       <div className="col-4">
         <img 
-          src={`../assets/heroes/${heroeId}.jpg`}
+          // src={`../assets/heroes/${heroeId}.jpg`} //desde public/assets
+          // src={ batman } //usando import
+          src={ heroImages(`./${ heroeId }.jpg`).default }
           alt={ superhero }
           className="img-thumbnail animate__animated animate__fadeInLeft"
         />
