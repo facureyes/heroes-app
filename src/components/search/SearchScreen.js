@@ -15,7 +15,6 @@ const SearchScreen = ({history}) => {
   const handleSubmit = event => {
     event.preventDefault(); 
     if(search !== ''){
-      console.log(heroesFiltered)
       history.push(`?q=${search}`);
     } else {
       history.push('/search');
